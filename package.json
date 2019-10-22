@@ -24,7 +24,7 @@
     "extends": "react-app"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./setupTests.js"
+    "setupTestFrameworkScriptFile": "./src/setupTests.js"
   },
   "browserslist": {
     "production": [
