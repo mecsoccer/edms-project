@@ -1,0 +1,153 @@
+.pdtb5{
+    padding: 3px 0;
+}
+.pdtb15{
+    padding: 15px 0;
+}
+.pdtrl28{
+    padding: 28px 28px 0;
+}
+.pdrl40{
+    padding: 0 40px;
+}
+.pdl12{
+    padding-left: 12px;
+}
+.mgr8{
+    margin-right: 8px;
+}
+.bd-lt{
+    border-left: 1px solid gainsboro;
+}
+.main{
+    padding: 70px 32px 25px 30px;
+}
+.sidenav{
+    box-shadow: 4px 0px 20px rgb(233, 224, 224);
+    margin-right: 20px;
+    height: inherit;
+    padding: 95px 0;
+}
+.sidenav-user-div{
+    height: 170px;
+    width: 100%;
+}
+.user-photo{
+    padding: 8.5px;
+    border-radius: 20px;
+    border: 2px solid #7396FD;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 16px;
+}
+.user-name{
+    font-size: 14px;
+    line-height: 16px;
+    color: #5F5C7F;
+}
+.user-role{
+    font-size: 10px;
+    line-height: 18px;
+    color: #8A94A6;
+}
+.user-dept{
+    font-size: 8px;
+    line-height: 18px;
+    color: #ACAFB1;
+}
+.sidenav-tabs{
+    height: 480px;
+}
+.main-tab{
+    border-left: 4px solid #0C66FF;
+    font-weight: bold;
+    color: #43536F;
+}
+.tab{
+    border-left: 4px solid white;
+    color: #8A94A6;
+}
+.tab-icon{
+    width: 16px;
+    height: 16px;
+    margin: 0 16px 0 26px
+}
+.dashboard-header{
+    height: 77px;
+    font-size: 24px;
+    color: #43536F;
+}
+.dashboard-contents{
+    height: 85px;
+}
+.items{
+    height: 40px;
+    border-left: 1px solid gainsboro;
+}
+.items:first-child{
+    border: none;
+}
+.item-icon{
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+}
+.item-title{
+    color: #8A94A6;
+}
+.item-qty{
+    color: #53627C;
+}
+.doc-summary{
+    height: 310px;
+}
+.doc-pend{
+    
+}
+.doc-sum{
+    border-left: 1px solid gainsboro;
+}
+.card-sm-ht{
+    height: 353px;
+    padding: 28px;
+    margin-right: 17px;
+}
+.card-sm-ht:last-child{
+    margin-right: 0px;
+}
+.doc-card{
+    
+}
+.card-header span{
+    border-bottom: 2px solid #0C66FF;
+    padding-bottom: 8px;
+}
+.file-icon {
+    width: 24px;
+    height: 18px;
+    margin: 0 10px;
+}
+.file-time{
+    color: #A6AEBC;
+}
+.activity-card{
+}
+.activity-count{
+    border-radius: 7px;
+    height: fit-content;
+    margin-left: 40px;
+    line-height: 10px;
+    padding: 3px 5px;
+}
+.avatar{
+    height: 24px;
+    width: 24px;
+}
+.msg-icon{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1px solid gainsboro;
+}
+.analysis-card{
+}
