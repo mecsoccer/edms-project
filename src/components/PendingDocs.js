@@ -7,7 +7,7 @@ class PendingDocs extends React.Component{
       <div className="flex flex-ai-ct pdrl40 twelvecol accent-fg-1 ten h40" key={doc.id}>
         <div className="twenty-percent">{doc.name}</div>
         <div className="twenty-percent">{doc.class}</div>
-        <div className="twenty-percent">{doc.dueDate}</div>
+        <div className="twenty-percent">{doc.due}</div>
         <div className="twenty-percent">{doc.owner}</div>
         <div className="twenty-percent"><span className="dom-color ten bold pointer">Review</span></div>
       </div>
@@ -15,12 +15,7 @@ class PendingDocs extends React.Component{
   }
 
   render() {
-    const pendingDocs = [
-      {id:1, name:'Application for leave', class:'proposal', dueDate:'12-jan-2018', owner: 'Olumide Mich...'},
-      {id:2, name:'Application for leave', class:'aplication', dueDate:'12-jan-2018', owner: 'Olumide Mich...'},
-      {id:3, name:'Application for leave', class:'proposal', dueDate:'12-jan-2018', owner: 'Olumide Mich...'},
-      {id:4, name:'Application for leave', class:'proposal', dueDate:'12-jan-2018', owner: 'Olumide Mich...'},
-    ];
+    const pendingDocs = this.props.detail;
     return (
       <div className="doc-card white-bg twelvecol flex wrap">
         <div className="h80 pdtrl28 flex flex-jc-sb twelvecol">

@@ -1,10 +1,9 @@
 import React from 'react';
-import { ReactComponent as HomeIcon} from './images/Home.svg';
-import { ReactComponent as DocIcon} from './images/Bookmark.svg';
-import { ReactComponent as ActivityIcon} from './images/Notification.svg';
-import { ReactComponent as ArchiveIcon} from './images/Archive.svg';
+import { connect } from 'react-redux';
+import Tabs from './Tabs';
 import { ReactComponent as SettingsIcon} from './images/Settings.svg';
 import UserPhoto from './images/Photo.png';
+import { changeTab } from '../actions';
 
 class SideNav extends React.Component{
   render() {
@@ -19,27 +18,7 @@ class SideNav extends React.Component{
           </div>
         </div>
         <div className="sidenav-tabs">
-          <div className="flex twelve bold main-tab flex-ai-ct h50">
-            <div className="tab-icon"><HomeIcon /></div>
-            <div >Dashboard</div>
-          </div>
-          <div className="tab flex twelve flex-ai-ct h50">
-            <div className="tab-icon"><DocIcon /></div>
-            <div>Documents</div>
-          </div>
-          <div className="tab flex twelve flex-ai-ct h50">
-            <div className="tab-icon"><ActivityIcon /></div>
-            <div>Activities</div>
-            <div className="activity-count white-text dom-color-bg">12</div>
-          </div>
-          <div className="tab flex twelve flex-ai-ct h50">
-            <div className="tab-icon"><ArchiveIcon /></div>
-            <div>Archive</div>
-          </div>
-          <div className="tab flex twelve flex-ai-ct h50">
-            <div className="tab-icon"><SettingsIcon /></div>
-            <div>Settings</div>
-          </div>
+          <Tabs />
         </div>
         <div>
           <div className="tab flex twelve flex-ai-ct h50">
@@ -52,4 +31,8 @@ class SideNav extends React.Component{
   }
 }
 
-export default SideNav;
+const mapStateToProps = (state) => {
+  return { current_tab: state.dashboard.current_tab };
+}
+
+export default connect(mapStateToProps, {changeTab})(SideNav);

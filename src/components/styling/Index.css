@@ -4,6 +4,10 @@ html,body,div,span,nav,a,button,img,input,header,ul,li,select,option{
 html, body{
     height: 100%;
 }
+a{
+    text-decoration: none;
+    color: unset;
+}
 body{
     margin: 0;
     background: #f6f9ff;
@@ -250,6 +254,12 @@ body{
 .h295{
     height: 290px;
 }
+.h350{
+    height: 350px;
+}
+.h440{
+    height: 440px;
+}
 
 /* overflow */
 .y-overflow-auto{
@@ -331,6 +341,9 @@ body{
 .no-margin{
     margin: 0;
 }
+.centered{
+    margin: auto;
+}
 
 /* border */
 .no-border{
@@ -341,8 +354,14 @@ body{
 }
 
 /* radius */
-.radius-5{
+.r5{
     border-radius: 5px;
+}
+.r4{
+    border-radius: 4px;
+}
+.r3{
+    border-radius: 3px;
 }
 
 /* buttons */
@@ -372,6 +391,9 @@ body{
 }
 .wrap{
     flex-wrap: wrap;
+}
+.grow1{
+    flex-grow: 1;
 }
 .flex-jc-lt{
     justify-content: start;
