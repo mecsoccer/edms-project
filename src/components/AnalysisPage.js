@@ -84,7 +84,7 @@ class AnalysisPage extends React.Component {
             const ctx = canvas.getContext('2d');
 
             ctx.beginPath();
-            ctx.font = '10px serif';
+            ctx.font = '12px poppins';
             ctx.fillStyle = '#30363D';
             ctx.fillText(txt, 50, y);
             ctx.fillText(dataSize, 200, y);
