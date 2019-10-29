@@ -1,6 +1,6 @@
 import axiosInstance from '../apis/edmsAPI';
 
-export const fetchProperties = () => async (dispatch, getState) => {
+export const fetchDepartments = () => async (dispatch, getState) => {
     try {
         const response = await axiosInstance.get('/departments');
         dispatch({ type: 'FETCH_DEPARTMENTS', payload: response.data });
@@ -20,9 +20,9 @@ export const fetchActivities = () => async (dispatch, getState) => {
     }
 }
 
-export const fetchDocuments = () => async (dispatch, getState) => {
+export const fetchDocuments = (query = '') => async (dispatch, getState) => {
     try {
-        const response = await axiosInstance.get('/documents');
+        const response = await axiosInstance.get(`/documents?${query}`);
         dispatch({ type: 'FETCH_DOCUMENTS', payload: response.data });
     }
     catch (error) {

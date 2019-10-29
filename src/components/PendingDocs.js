@@ -15,7 +15,7 @@ class PendingDocs extends React.Component{
   }
 
   render() {
-    const pendingDocs = this.props.detail;
+    const pendingDocs = this.props.detail.filter(doc => doc.status === 'pending');
     return (
       <div className="doc-card white-bg twelvecol flex wrap">
         <div className="h80 pdtrl28 flex flex-jc-sb twelvecol">

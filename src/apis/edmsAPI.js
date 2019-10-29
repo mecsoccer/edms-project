@@ -16,20 +16,30 @@ const resources = {
         {id: 2, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'Wale Oni', class: 'proposal', due: '12-jan-2018', status: 'pending' },
         {id: 3, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'Segun Oni', class: 'application', due: '12-jan-2018', status: 'pending' },
         {id: 4, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'John Doe', class: 'proposal', due: '12-jan-2018', status: 'pending' },
-        /*{id: 5, name: 'Application for leave', owner: 'Segun Oni', class: 'application', due: '12-jan-2018', status: 'approved' },
-        {id: 6, name: 'Application for leave', owner: 'Segun Oni', class: 'proposal', due: '12-jan-2018', status: 'approved' },
-        {id: 7, name: 'Application for leave', owner: 'Segun Oni', class: 'proposal', due: '12-jan-2018', status: 'approved' },
-        {id: 8, name: 'Application for leave', owner: 'Segun Oni', class: 'proposal', due: '12-jan-2018', status: 'rejected' },
-        {id: 9, name: 'Application for leave', owner: 'Segun Oni', class: 'proposal', due: '12-jan-2018', status: 'rejected' },
-        {id: 10, name: 'Application for leave', owner: 'Segun Oni', class: 'proposal', due: '12-jan-2018', status: 'rejected' },*/
+        {id: 5, name: 'Application for leave', description: 'Alpha deta business proposal', created: 'today, 14:30pm', owner: 'Segun Oni', class: 'proposal', due: '12-jan-2018', status: 'approved' },
+        {id: 6, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'Wale Oni', class: 'proposal', due: '12-jan-2018', status: 'approved' },
+        {id: 7, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'Segun Oni', class: 'application', due: '12-jan-2018', status: 'approved' },
+        {id: 8, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'John Doe', class: 'proposal', due: '12-jan-2018', status: 'approved' },
+        {id: 9, name: 'Application for leave', description: 'Alpha deta business proposal', created: 'today, 14:30pm', owner: 'Segun Oni', class: 'proposal', due: '12-jan-2018', status: 'approved' },
+        {id: 10, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'Wale Oni', class: 'proposal', due: '12-jan-2018', status: 'rejected' },
+        {id: 11, name: 'Application for leave', description: 'Presentation Slides', created: 'yesterday, 14:30pm', owner: 'Segun Oni', class: 'application', due: '12-jan-2018', status: 'rejected' },
     ],
     members: [],
 }
 
 export default {
-    get: (resource) => {
+    get: (requestString) => {
+      const path = requestString.match(/\/[a-z]+/g).join('');
+      const queryString = requestString.substr(path.length);
+      const queryObject = stringParser.parse(queryString);
+
+      if (Object.keys(queryObject).length === 0) {
+          return Promise.resolve({
+              data: resources[path.slice(1)]
+          });
+      }
       return Promise.resolve({
-        data: resources[resource.slice(1)]
+        data: resources[path.slice(1)].filter(res => queryObject[Object.keys(queryObject)[0]] === res[Object.keys(queryObject)[0]])
       });
     }
   };

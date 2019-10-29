@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchProperties, fetchActivities, fetchDocuments, changeTab } from '../actions';
+import { fetchDepartments, fetchActivities, fetchDocuments, changeTab } from '../actions';
 import SideNav from './SideNav';
 import Card from './Card';
 import DocumentTile from './DocumentTile';
@@ -19,10 +19,14 @@ import Activities from './Activities';
 
 class Dashboard extends React.Component{
   componentDidMount() {
-    this.props.fetchProperties();
+    this.props.fetchDepartments();
     this.props.fetchActivities();
     this.props.fetchDocuments();
     this.props.changeTab('dashboard');
+  }
+
+  renderRecentDocs() {
+    return this.props.documents.filter(doc => Number(doc.id) < 5);
   }
 
   render() {
@@ -56,7 +60,7 @@ class Dashboard extends React.Component{
             <div className="flex flex-ai-ct flex-jc-ct twelvecol">
               <Card detail={{initial:"RECE",others:"NT DOCUMENT"}}>
                 <div className="flex wrap h240">
-                  {this.props.documents.map((doc) => {
+                  {this.renderRecentDocs().map((doc) => {
                     return <DocumentTile key={doc.id} detail={{title: doc.description, time: doc.due}} />})
                   }
                 </div>
@@ -88,7 +92,7 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(
   mapStateToProps,
   {
-    fetchProperties,
+    fetchDepartments,
     fetchActivities,
     fetchDocuments,
     changeTab,

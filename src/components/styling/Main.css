@@ -21,12 +21,14 @@
 }
 .main{
     padding: 70px 32px 25px 30px;
+    min-width: 1000px;
 }
 .sidenav{
     box-shadow: 4px 0px 20px rgb(233, 224, 224);
     margin-right: 20px;
     height: inherit;
     padding: 95px 0;
+    min-width: 200px;
 }
 .sidenav-user-div{
     height: 170px;
