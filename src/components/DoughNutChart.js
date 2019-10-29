@@ -1,16 +1,14 @@
 import React from 'react';
-import Chart from 'chart.js';
 import { connect } from 'react-redux';
 import { fetchDocuments } from '../actions';
 
 class GroupedBars extends React.Component{
     componentDidMount() {
-		//this.initializeChart();
 		this.props.fetchDocuments();
+		this.drawOnCanvas(this.transformData(this.props.documents), 'doughnut-chart');
 	}
 	
 	componentDidUpdate() {
-		//this.initializeChart();
 		this.drawOnCanvas(this.transformData(this.props.documents), 'doughnut-chart');
 	}
 
@@ -116,33 +114,6 @@ class GroupedBars extends React.Component{
             ctx.fillText(text, x, y);
             ctx.moveTo(10,50);
         }
-    }
-
-    initializeChart(){
-		const approvedDocs = this.props.documents.filter(doc => doc.status === 'approved').length;
-		const rejectedDocs = this.props.documents.filter(doc => doc.status === 'rejected').length;
-		const pendingDocs = this.props.documents.filter(doc => doc.status === 'pending').length;
-
-		const ctx = document.getElementById("doughnut-chart");
-		const myChart = new Chart(ctx, {
-			type: 'pie',
-			data: {
-				labels: ["Approved", "Rejected", "Pending"],
-				datasets: [{
-					label: '# of Tomatoes',
-					data: [approvedDocs, pendingDocs, rejectedDocs],
-					backgroundColor: ["#82B1ED", "#277D61","#FFAD0D"],
-					borderColor: ["#82B1ED", "#277D61","#FFAD0D"],
-					borderWidth: 1,
-					borderAlign: 'inner',
-				}]
-			},
-			options: {
-				cutoutPercentage: 70,
-				responsive: false,
-		
-			}
-		});
     }
 
     render() {
