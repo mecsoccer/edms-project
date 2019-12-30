@@ -1,10 +1,10 @@
 import React from 'react';
-import GroupedBars from './GroupedBars';
+import GroupedBars from '../GroupedBars';
 import { connect } from 'react-redux';
-import { changeTab } from '../actions';
-import './styling/Index.css';
-import './styling/Main.css';
-import SideNav from './SideNav';
+import { changeTab } from '../../actions';
+import '../styling/Index.css';
+import '../styling/Main.css';
+import SideNav from '../SideNav';
 
 class AnalysisPage extends React.Component {
     componentDidMount() {

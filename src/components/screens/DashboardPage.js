@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchDepartments, fetchActivities, fetchDocuments, changeTab } from '../actions';
-import SideNav from './SideNav';
-import Card from './Card';
-import DocumentTile from './DocumentTile';
-import DashboardItem from './DashboardItem';
-import DoughNutChart from './DoughNutChart';
-import GroupedBars from './GroupedBars';
-import PendingDocs from './PendingDocs';
-import {ReactComponent as DepartmentIcon} from './images/Department-Icon.svg';
-import {ReactComponent as DocumentIcon} from './images/Document-Icon.svg';
-import {ReactComponent as MemberIcon} from './images/Member-Icon.svg';
-import {ReactComponent as UnitIcon} from './images/Unit-Icon.svg';
-import './styling/Index.css';
-import './styling/Main.css';
-import Activities from './Activities';
+import { fetchDepartments, fetchActivities, fetchDocuments, changeTab } from '../../actions';
+import SideNav from '../SideNav';
+import Card from '../Card';
+import DocumentTile from '../DocumentTile';
+import DashboardItem from '../DashboardItem';
+import DoughNutChart from '../DoughNutChart';
+import GroupedBars from '../GroupedBars';
+import PendingDocs from '../PendingDocs';
+import {ReactComponent as DepartmentIcon} from '../images/Department-Icon.svg';
+import {ReactComponent as DocumentIcon} from '../images/Document-Icon.svg';
+import {ReactComponent as MemberIcon} from '../images/Member-Icon.svg';
+import {ReactComponent as UnitIcon} from '../images/Unit-Icon.svg';
+import '../styling/Index.css';
+import '../styling/Main.css';
+import Activities from '../Activities';
 
-class Dashboard extends React.Component{
+class DashboardPage extends React.Component{
   componentDidMount() {
     this.props.fetchDepartments();
     this.props.fetchActivities();
@@ -96,4 +96,4 @@ export default connect(
     fetchActivities,
     fetchDocuments,
     changeTab,
-  })(Dashboard);
+  })(DashboardPage);

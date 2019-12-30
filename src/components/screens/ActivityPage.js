@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SideNav from './SideNav';
-import Activities from './Activities';
-import './styling/Index.css';
-import './styling/Main.css';
-import { changeTab } from '../actions';
+import SideNav from '../SideNav';
+import Activities from '../Activities';
+import '../styling/Index.css';
+import '../styling/Main.css';
+import { changeTab } from '../../actions';
 
 class Dashboard extends React.Component{
   componentDidMount() {

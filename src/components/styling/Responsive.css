@@ -1,0 +1,89 @@
+@media screen and (min-width: 100px) {
+    /*customs*/
+}
+
+@media screen and (min-width: 200px) {
+    /*customs*/
+}
+
+@media screen and (min-width: 300px) {
+    /*customs*/
+}
+
+@media screen and (min-width: 500px) {
+    /*customs*/
+}
+
+@media screen and (min-width: 600px) {
+    .days td {
+        padding: 0 16px;
+    }
+    .top-navbar{
+        height: 80px;
+        margin-bottom: 85px;
+    }
+    .logo-name{
+        font-size: 32px;
+        padding: 15px;
+    }
+    .container.open{
+        width: 100%;
+        padding: 4% 20%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .logo-name{
+        width: 100%;
+    }
+    .menu-button-2{
+        display: block;
+    }
+    .back-arrow{
+        display: none;
+    }
+    .tab-position{
+        padding: 5px 10% 0 10%;
+    }
+    .tab-container{
+        padding: 27px 10%;
+    }
+    .tab {
+        width: auto;
+        max-width: 34%;
+    }
+    .main{
+        -webkit-transform: translate(25vw, 0);
+        transform: translate(25vw, 0);
+        transition: transform 0.3s ease;
+        width: 75%;
+    }
+    .main-full{
+        width: 100%;
+        transform: translate(0, 0);
+        transition: transform 0.3s ease;
+    }
+    /* custom css*/
+}
+
+@media screen and (min-width: 900px) {
+    /* customs */
+    .input-form{
+        padding: 20px 25%;
+    }
+    .form-container {
+        margin: 25px 15%;
+    }
+    .form-responsive{
+        padding: 30px 15%;
+    }
+    .modal-content{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    body{
+        margin: 0 calc((100% - 1500px)/2);
+    }
+}
